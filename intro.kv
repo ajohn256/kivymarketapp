@@ -1,0 +1,194 @@
+
+MDScreen:
+    name:"intro"
+
+    MDBoxLayout:
+        orientation:"vertical"
+        padding:"12dp",
+        MDCard:
+            size_hint:0.9,None
+            height:"60dp"
+            radius:"12dp",
+            elevation:6
+            md_bg_color:(244/255,217/255,14/255,1)
+            pos_hint:{"center_x":.5,"center_y":.9}
+            padding:"12dp",
+
+            MDGridLayout:
+                rows:1
+                cols:3
+
+                MDIconButton:
+                    icon:"cog"
+
+                MDLabel:
+                    text:"Good Afternoon John"
+                    pos_hint:{"center_x":.5}
+                    font_size:22
+                    bold:True
+
+
+                MDIconButton:
+                    icon:"menu"
+                    on_release:nav_drawer.set_state("open")
+
+        MDLabel:
+            text:"Its a weekend, how about some good stuff"
+            size_hint_y:0.1
+            height:self.texture_size[1]
+            halign:"center"
+            bold:True
+            font_size:20
+
+
+
+        ScrollView:
+
+            MDList:
+                spacing:"12dp",
+                padding:"10dp",
+
+
+                MDGridLayout:
+                    cols:2
+                    rows:2
+                    spacing:"12dp",
+                    padding:"10dp",
+                    id:cards
+
+                    MDCard:
+                        size_hint:0.4,None
+                        height:"200dp"
+                        radius:"12dp",
+                        elevation:5
+                        pos_hint:{"center_x":.5,"center_y":.4}
+                        #md_bg_color:(215/255,200/255,9/255,1)
+                        ripple_behavior: True
+                        #focus_behavior: True
+                        FitImage:
+                            source:app.chat
+                            size_hint:1,1
+
+
+
+
+                    MDCard:
+                        size_hint:0.4,None
+                        height:"200dp"
+                        radius:"12dp",
+                        elevation:5
+                        pos_hint:{"center_x":.5,"center_y":.4}
+                        #md_bg_color:(215/255,200/255,9/255,1)
+                        ripple_behavior: True
+                        #focus_behavior: True
+                        FitImage:
+                            source:app.message
+
+                    MDCard:
+                        size_hint:0.4,None
+                        height:"200dp"
+                        radius:"12dp",
+                        elevation:5
+                        pos_hint:{"center_x":.5,"center_y":.4}
+                        #md_bg_color:(215/255,200/255,9/255,1)
+                        ripple_behavior: True
+                        #focus_behavior: True
+                        FitImage:
+                            source:app.transfer
+
+                    MDCard:
+                        size_hint:0.4,None
+                        height:"200dp"
+                        radius:"12dp",
+                        elevation:5
+                        pos_hint:{"center_x":.5,"center_y":.4}
+                        #md_bg_color:(215/255,200/255,9/255,1)
+                        ripple_behavior: True
+                        #focus_behavior: True
+                        FitImage:
+                            source:app.security
+
+
+                    Widget:
+                        size_hint_y:0.3
+
+
+    MDNavigationDrawer:
+        id:nav_drawer
+
+
+        ContentNavDrawer:
+            orientation:"vertical"
+            padding:(12,12)
+            spacing:(12,15)
+
+            MDCard:
+                size_hint:0.85,None
+                padding:"12dp",
+                height:"100dp"
+                radius:"12dp",
+                elevation:5
+                pos_hint:{"center_x":.5,"center_y":.4}
+                md_bg_color:(252/255,249/255,207/255,1)
+                ripple_behavior: True
+                #focus_behavior: True
+                MDBoxLayout:
+                    orientation:"vertical"
+                    Image:
+                        source:"assets/user.png"
+
+                    MDLabel:
+                        text:"Your account"
+                        size_hint_y:None
+                        height:self.texture_size[1]
+                        halign:"center"
+                        bold:True
+                        font_size:17
+
+            Widget:
+                size_hint_y:0.1
+            MDLabel:
+                text:"Simplify your work here!"
+                size_hint_y:0.05
+                height:self.texture_size[1]
+                halign:"center"
+                bold:True
+                font_size:20
+            Widget:
+                size_hint_y:0.1
+            MDCard:
+                size_hint:0.9,None
+                orientation:"vertical"
+                height:self.minimum_height
+                radius:"12dp",
+                padding:"12dp",
+                elevation:5
+                pos_hint:{"center_x":.5,"center_y":.4}
+                #md_bg_color:(28/255,219/255,44/255,1)
+                #ripple_behavior: True
+                focus_behavior: True
+                MDList:
+                    OneLineIconListItem:
+                        text:"Profile"
+                        IconLeftWidget:
+                            icon:"assets/user.png"
+
+                    OneLineIconListItem:
+                        text:"Chat history"
+                        IconLeftWidget:
+                            icon:"assets/chat.png"
+
+
+
+                    OneLineIconListItem:
+                        text:"My activity"
+                        IconLeftWidget:
+                            icon:"history"
+
+                    OneLineIconListItem:
+                        text:"Settings"
+                        IconLeftWidget:
+                            icon:"cog"
+
+            Image:
+                source:"assets/fp.png"
